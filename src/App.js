@@ -2,25 +2,22 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 import { Dictionnaire, Header } from './components/Header';
+import Definition from './components/Definition';
 
 //Create context 
-export const InputContext = React.createContext();
+//export const InputContext = React.createContext();
 
 
 function App() {
 
-  const [inputValue, setInputValue] = useState("");
+  const [word, setWord] = useState("");
 
-  const value = { 
-    inputValue, 
-    setInputValue //Ayni isim olunca InputValue: inputValue yazmana gerek yok
-  }
+
   return (
-    <InputContext.Provider value={value}>
     <div className="App">
-      <Header />
-    </div>
-    </InputContext.Provider>
+      <Header word={word} setWord = {setWord}/>
+      <Definition word = {word}/>
+      </div>
   );
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import {data} from '../data'
-import {langues} from '../langues';
+import {data} from '../data/data'
+import {langues} from '../data/langues';
 
 const Definition = ({word, tralang}) => {
 

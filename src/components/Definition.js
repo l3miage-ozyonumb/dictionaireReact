@@ -15,8 +15,9 @@ const Definition = ({word, tralang}) => {
         <p className='text-left mx-auto pb-5'>Synonym : {wordData?.synonym}</p>
         <p className='text-left mx-auto pb-5'>Antonym : {wordData?.antonym}</p>
         <hr/>
-        <p className='text-left mx-auto pt-5'> Traduction en {langues[tralang]} est {wordData?.[tralang]} </p>
-
+        {wordData && tralang &&
+          (<p className='text-left mx-auto pt-5'> Traduction en {langues[tralang]} est {wordData?.[tralang]} </p>)
+        }
     </div>
   )
 }

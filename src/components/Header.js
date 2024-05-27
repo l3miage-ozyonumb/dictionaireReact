@@ -35,6 +35,7 @@ export const Header = ({word, setWord, tralang, setTralang}) => {
             <form>
               <label>
                 <select className='flex bg-blue-500 text-white py-3 px-4 appearence-none'onChange={handleSelectChange}>
+                  <option value="">Select a language</option>
                   <option value="fr">Français</option>
                   <option value="tr">Turc</option>
                 </select>

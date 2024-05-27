@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
-import { Dictionnaire, Header } from './components/Header';
+import { Header } from './components/Header';
 import Definition from './components/Definition';
 
 //Create context 
@@ -11,12 +10,14 @@ import Definition from './components/Definition';
 function App() {
 
   const [word, setWord] = useState("");
+  const [tralang, setTralang] = useState("");
+
 
 
   return (
     <div className="App">
-      <Header word={word} setWord = {setWord}/>
-      <Definition word = {word}/>
+      <Header word={word} setWord = {setWord} tralang={tralang} setTralang={setTralang}/>
+      <Definition word = {word} tralang = {tralang}/>
       </div>
   );
 }

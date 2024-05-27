@@ -1,14 +1,16 @@
 import React from 'react';
-import { useState } from 'react';
 
-export const Header = ({word, setWord}) => {
+export const Header = ({word, setWord, tralang, setTralang}) => {
 
-  const [value, setValue] = useState(""); 
 
 
   const handleInputChange = e => {
     setWord(e.target.value);
     //console.log(value);
+  }
+
+  const handleSelectChange = e => {
+    setTralang(e.target.value);
   }
 
   const handleSubmit = () => {
@@ -17,9 +19,9 @@ export const Header = ({word, setWord}) => {
   }
 
 
+  console.log("Rendered again"); //this is just for me to see when i click on submit the component is re-rendered
 
-
-
+  console.log("tralang = " + tralang);
 
     
   return (
@@ -32,6 +34,15 @@ export const Header = ({word, setWord}) => {
             <input type='text' className='px-4 py-2 w-80' placeholder='Search...' onChange={handleInputChange}/>
             <button className='bg-blue-400 text-white px-4'
             onClick={handleSubmit}>Rechercher</button>
+            <form className='bg-blue-500'>
+              <label className='text-black px-4 pos-relative'>
+                <select className='display-none'onChange={handleSelectChange}>
+                  <option value="fr">Français</option>
+                  <option value="en">Anglais</option>
+                  <option value="tr">Turc</option>
+                </select>
+              </label>
+            </form>
           </div>
         </div>
       </div> 
